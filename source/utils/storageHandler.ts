@@ -1,11 +1,15 @@
 import * as GoogleCloudStorage from "@google-cloud/storage";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const googleCloudConfig = {
   bucketUrl: "suka-erp.appspot.com",
   projectId: "suka-erp",
-  keyFilename:
-    "/home/chakradhar/Code/Node/suka-erp/packages/@suka-erp-file-upload/suka-erp-firebase-adminsdk-wkaaf-6476b119d8.json",
+  keyFilename: process.env["GC_CERT_JSON_PATH"],
 };
+
+console.log(process.env["GC_CERT_JSON_PATH"]);
 
 export default class Storage {
   private storageInstance: GoogleCloudStorage.Storage;
@@ -38,7 +42,7 @@ export default class Storage {
       });
 
       blobStream.on("error", (err) => {
-        reject("Something went wrong when uploading the file!");
+        reject("Something went wrong when uploading the file!" + err);
       });
 
       blobStream.on("finish", () => {
