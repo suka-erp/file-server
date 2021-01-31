@@ -1,0 +1,5 @@
+node_modules
+build
+
+# Firebase Service Account Credentials.
+suka-erp-firebase-adminsdk-wkaaf-6476b119d8.json
