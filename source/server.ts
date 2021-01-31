@@ -5,6 +5,7 @@ import Multer from "multer";
 
 import Storage from "./utils/storageHandler";
 
+// Declarations
 const PORT = process.env.PORT || 3000;
 const server = express();
 const storage = new Storage();
@@ -12,11 +13,13 @@ const multer = Multer({
   storage: Multer.memoryStorage(),
 });
 
+// Middleware
 server.use(cors());
 server.use(compression());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
+// Routes
 server.post(
   "/upload",
   multer.single("file"),
@@ -43,6 +46,7 @@ server.post(
   }
 );
 
+// Start server
 server.listen(PORT, () => {
   console.log(`Server started listening on ${PORT}`);
 });
