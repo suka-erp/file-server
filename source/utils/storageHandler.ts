@@ -9,8 +9,6 @@ const googleCloudConfig = {
   keyFilename: process.env["GC_CERT_JSON_PATH"],
 };
 
-console.log(process.env["GC_CERT_JSON_PATH"]);
-
 export default class Storage {
   private storageInstance: GoogleCloudStorage.Storage;
   private bucket: GoogleCloudStorage.Bucket;
