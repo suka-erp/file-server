@@ -1,8 +1,8 @@
 {
-  "name": "@suka-erp/file-upload",
+  "name": "file-server",
   "version": "0.0.1",
-  "description": "File upload server for Suka ERP.",
-  "main": "source/fileUploadServer.ts",
+  "description": "File handling server for Suka ERP.",
+  "main": "source/server.ts",
   "scripts": {
     "dev": "nodemon source/server.ts",
     "start": "node source/server.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/atomio/suka-erp.git"
+    "url": "git+https://github.com/suka-erp/file-server.git"
   },
-  "author": "atomio",
+  "author": "suka-erp",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/atomio/suka-erp/issues"
+    "url": "https://github.com/suka-erp/file-server/issues"
   },
-  "homepage": "https://github.com/atomio/suka-erp#readme",
+  "homepage": "https://github.com/suka-erp/file-server#readme",
   "dependencies": {
     "@google-cloud/storage": "^5.7.3",
     "compression": "^1.7.4",
